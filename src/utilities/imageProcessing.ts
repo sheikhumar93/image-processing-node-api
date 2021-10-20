@@ -18,7 +18,15 @@ export const resizeImage = async (
   return sharpImage;
 };
 
+const createThumbDir = (): void => {
+  const thumbDir = path.join(__dirname, '../../images', 'thumbs');
+  if (!fs.existsSync(thumbDir)) {
+    fs.mkdirSync(thumbDir);
+  }
+};
+
 export const thumbExists = (imageName: string): string | null => {
+  createThumbDir();
   const thumbPath = path.join(
     __dirname,
     '../../images',
