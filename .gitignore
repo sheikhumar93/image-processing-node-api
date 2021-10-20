@@ -171,6 +171,6 @@ dist
 .history
 .ionide
 
-images/
+images/thumbs
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,node,visualstudiocode
