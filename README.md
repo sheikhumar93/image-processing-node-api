@@ -11,3 +11,8 @@ Usage:
 3. Execute "node dist/index"
 4. Go to "http://localhost:5000/api/image?imageName=image_name_without_ext&width=required_width&height=required_height"
 5. The resized image will be placed in the ./images/thumb dir
+
+Other Scripts:
+1. "npm run lint" - to run prettier & eslint
+2. "npm run test" - to run jasmine tests
+3. "npm run dev" - run express api under nodemon
