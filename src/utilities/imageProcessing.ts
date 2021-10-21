@@ -11,7 +11,7 @@ export const resizeImage = async (
   const image = imagePath + '/' + imageName + '.jpeg';
   const sharpImage = await sharp(image)
     .resize(width, height)
-    .toFile(`./images/thumbs/${imageName}-thumb.png`)
+    .toFile(`./images/thumbs/${imageName}-w${width}h${height}-thumb.png`)
     .catch((err) => {
       return err;
     });
@@ -25,12 +25,16 @@ const createThumbDir = (): void => {
   }
 };
 
-export const thumbExists = (imageName: string): string | null => {
+export const thumbExists = (
+  imageName: string,
+  width: number,
+  height: number
+): string | null => {
   createThumbDir();
   const thumbPath = path.join(
     __dirname,
     '../../images',
-    `thumbs/${imageName}-thumb.png`
+    `thumbs/${imageName}-w${width}h${height}-thumb.png`
   );
   if (fs.existsSync(thumbPath)) {
     return thumbPath;
